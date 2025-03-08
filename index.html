@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Women's Day, Ah Khoeurn! 💖</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom, #ffe6f2, #ffd9e6);
+            text-align: center;
+            padding: 20px;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            overflow-y: auto;
+            animation: bg 5s infinite alternate;
+        }
+        @keyframes bg {
+            0% { background: #ffe6f2; }
+            100% { background: #ffd9e6; }
+        }
+        h1 {
+            color: #ff4d88;
+            font-size: 28px;
+            text-shadow: 2px 2px 10px #ff99cc;
+        }
+        p {
+            font-size: 16px;
+            color: #444;
+            padding: 0 15px;
+            line-height: 1.6;
+        }
+        img {
+            width: 80%;
+            max-width: 300px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 15px #ff99cc;
+            margin-bottom: 20px;
+        }
+        .button-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        button {
+            background: #ff4d88;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            width: 80%;
+            max-width: 300px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #ff3385;
+            transform: scale(1.05);
+        }
+        .heart {
+            position: fixed;
+            color: #ff4d88;
+            font-size: 20px;
+            animation: floating 5s infinite ease-in-out;
+            opacity: 0.8;
+        }
+        @keyframes floating {
+            0% { transform: translateY(0); opacity: 1; }
+            100% { transform: translateY(-100vh); opacity: 0; }
+        }
+        #firework {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body onclick="playMusic()">
+
+<div id="firework"></div>
+
+<h1>Happy Women's Day, Ah Khoeurn! 💖</h1>
+
+<p>Today is not just a day to appreciate you as an amazing woman, but to let you know how deeply special you are to me. From the very first time we talked, you’ve held a place in my heart that no one else has.</p>
+
+<!-- Image for Ah Khoeurn -->
+<img src="ah_khoeurn_love.jpg" alt="Beautiful Soul">
+
+<p>I admire your kindness, your strength, and the way you chase your dreams. And yet, beyond all of that, there’s something about you that makes me feel like I’ve found someone truly irreplaceable.</p>
+
+<p>Every time we talk, I feel closer to you. And the more I get to know you, the more I realize… I don’t just want to be your friend. I want to be the one who stands by your side, who supports you, who makes you smile even on the hardest days.</p>
+
+<p>I don’t know what the future holds, but I know one thing for sure—there’s no one else I’d rather take this journey with than you.</p>
+
+<h2>Will you be mine? ❤️</h2>
+
+<div class="button-container">
+    <button onclick="yesClicked()">Yes, Let’s See Where This Goes 💕</button>
+    <button onclick="friendClicked()">Let’s Stay Friends for Now 😏</button>
+</div>
+
+<audio id="bg-music" loop>
+    <source src="wise-man.mp3" type="audio/mp3">
+</audio>
+
+<script>
+    function playMusic() {
+        document.getElementById("bg-music").play();
+        document.body.onclick = null;
+    }
+
+    function yesClicked() {
+        alert("You Are Now Officially My Special One 💕💖");
+        document.getElementById("firework").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("firework").style.display = "none";
+        }, 5000);
+    }
+
+    function friendClicked() {
+        alert("Alright, we'll take it slow! 😊");
+    }
+
+    setInterval(() => {
+        let heart = document.createElement('div');
+        heart.innerHTML = '❤️';
+        heart.className = 'heart';
+        heart.style.left = Math.random() * window.innerWidth + 'px';
+        heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+        document.body.appendChild(heart);
+    }, 300);
+</script>
+
+</body>
+</html>
